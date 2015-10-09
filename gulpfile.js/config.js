@@ -3,15 +3,10 @@ module.exports = {
         src: './src',
         dest: './public',
     },
-    assets: {
-        js: '/assets/js',
-        css: '/assets/css',
-        html: './'
-    },
     tasks: {
         sass: {
             src: 'sass',
-            dest: '/assets/css',
+            dest: 'assets/css',
             main: 'app.scss',
             extensions: ['sass', 'scss'],
             sassGlobbing: {
@@ -20,10 +15,10 @@ module.exports = {
         },
         bower: {
             src: './bower_components',
-            extensions: ['gif','jpg','png','woff','eot','svg','ttf']
+            extensions: ['gif', 'jpg', 'png', 'woff', 'eot', 'svg', 'ttf']
         },
         html: {
-            src: 'html',
+            src: './',
             dest: './',
             dataFile: 'data/template.json',
             htmlmin: {
@@ -31,6 +26,16 @@ module.exports = {
             },
             extensions: ['html', 'json'],
             excludeFolders: ['layouts', 'shared', 'macros', 'data']
+        },
+        images: {
+            src: 'assets/img',
+            dest: 'assets/img',
+            extensions: ['jpg', 'png', 'svg', 'gif']
+        },
+        js: {
+            src: 'assets/js',
+            dest: 'assets/js',
+            extensions: ['js']
         }
     }
 }

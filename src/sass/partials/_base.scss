@@ -1,5 +1,6 @@
 html,body {
 	box-sizing: border-box;
+	background: yellow;
 }
 *,*:before,*:after {
 	outline: none !important;
@@ -19,7 +20,7 @@ body {
 	max-width: 1300px;
 	width: 100%;
 }
-a {
+a { 
 	color: inherit;
 	text-decoration: inherit;
 }
