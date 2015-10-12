@@ -2,10 +2,12 @@ var gulp = require('gulp');
 var config = require('../config')
 var path = require('path');
 var browserSync = require('browser-sync')
+var notify = require("gulp-notify");
 var sass = require('gulp-sass');
 var cssGlobbing = require('gulp-css-globbing');
 var sourcemaps = require('gulp-sourcemaps');
 var neat = require('node-neat');
+var plumber = require('gulp-plumber')
 var bourbon = require('node-bourbon');
 
 var paths = {
@@ -19,6 +21,7 @@ var options = {
 } 
 gulp.task('sass', function() {
     gulp.src(paths.src)
+        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(sourcemaps.init())
         .pipe(cssGlobbing(config.tasks.sass.sassGlobbing))
         .pipe(sass(options))

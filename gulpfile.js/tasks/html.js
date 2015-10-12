@@ -2,11 +2,11 @@ var gulp         = require('gulp')
 var config       = require('../config')
 var path         = require('path')
 var browserSync = require('browser-sync')
+var notify = require("gulp-notify");
 var data         = require('gulp-data')
 var render       = require('gulp-nunjucks-render')
 var fs           = require('fs')
 var plumber = require('gulp-plumber')
-var debug = require('gulp-debug')
 
 var exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
 
@@ -22,7 +22,7 @@ var getData = function(file) {
 gulp.task('html', function() {
   render.nunjucks.configure([path.resolve(config.root.src, config.tasks.html.src)], {watch: false })
   return gulp.src(paths.src)
-  .pipe(debug({title: 'Compilated:'}))
+    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(data(getData))
     .pipe(plumber())
     .pipe(render())

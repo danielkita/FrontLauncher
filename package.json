@@ -14,6 +14,7 @@
     "gulp-iconfont": "^5.0.0",
     "gulp-imagemin": "^2.3.0",
     "gulp-minify-css": "^1.2.0",
+    "gulp-notify": "^2.2.0",
     "gulp-nunjucks-render": "^1.0.0",
     "gulp-plumber": "^1.0.1",
     "gulp-replace": "^0.5.4",

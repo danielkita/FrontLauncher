@@ -2,7 +2,9 @@ var gulp = require('gulp');
 var config = require('../config');
 var path = require('path');
 var wiredep = require('wiredep').stream;
+
 var options = {
+    ignorePath: '../../../' + path.normalize(config.root.dest) + '/',
     overrides: {
         'modernizr': {
             "main": 'modernizr.js'
