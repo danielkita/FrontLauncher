@@ -7,12 +7,14 @@ var minifyCss = require('gulp-minify-css');
 
 
 var paths = {
-	src: path.resolve(config.root.dest, config.tasks.html.dest, '*.html'),
+	src: path.resolve(config.root.src, config.tasks.html.src, '**/*.html'),
 	dest: path.resolve(config.root.dest, config.tasks.html.dest)
 }
+
 gulp.task('usemin', function() {
   return gulp.src(paths.src)
     .pipe(usemin({
+      assetsDir: config.root.dest,
       css: [minifyCss, 'concat'],
       js: [uglify],
       inlinejs: [ uglify ],

@@ -6,7 +6,7 @@ var flatten = require('gulp-flatten');
 
 var paths = {
 	src: path.resolve(config.tasks.bower.src , '**/*.{' + config.tasks.bower.extensions.join(',') + '}'),
-	dest: path.resolve(config.root.dest, config.tasks.sass.dest , '/resources')
+	dest: path.resolve(config.root.dest, config.tasks.sass.dest , 'resources')
 }
 gulp.task('copy', function () {
   gulp.src(paths.src)

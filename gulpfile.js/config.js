@@ -5,7 +5,7 @@ module.exports = {
     },
     tasks: {
         sass: {
-            src: 'sass',
+            src: 'assets/sass',
             dest: 'assets/css',
             main: 'app.scss',
             extensions: ['sass', 'scss'],
@@ -25,7 +25,7 @@ module.exports = {
                 collapseWhitespace: true
             },
             extensions: ['html', 'json'],
-            excludeFolders: ['layouts', 'shared', 'macros', 'data']
+            excludeFolders: ['layouts', 'components', 'data']
         },
         images: {
             src: 'assets/img',

@@ -23,8 +23,8 @@ var options = {
     dependencies: true,
 };
 gulp.task('wiredep', function(callback) {
-    gulp.src(path.resolve(config.root.src , config.assets.html , '**/*.html'))
+    gulp.src(path.resolve(config.root.src , config.tasks.html.src , '**/*.html'))
         .pipe(wiredep(options))
-        .pipe(gulp.dest(path.resolve(config.root.src , config.assets.html)));
+        .pipe(gulp.dest(path.resolve(config.root.src , config.tasks.html.src)));
     callback();
 });

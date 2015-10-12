@@ -1,6 +1,6 @@
-var gulp = require('gulp');
+var gulp = require('gulp')
 var config = require('../config')
-var path = require('path');
+var path = require('path')
 var watch = require('gulp-watch');
 
 gulp.task('watch', ['browserSync'], function() {
