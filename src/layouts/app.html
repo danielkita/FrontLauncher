@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl" class="no-js">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+
+	<meta charset="utf-8" >
+	<meta name="description" content="" >
+	<meta name="keywords" content="" >
+	<meta name="theme-color" content="#FFF">
+	<title>{{title}}</title>
+	{% include "components/assets/styles.html" %}
+
+</head>
+<body>
+	{% include "components/header.html" %}
+	{% block content %}{% endblock %}
+	{% include "components/footer.html" %}
+	{% include "components/assets/scripts.html" %}
+</body>
+</html>
