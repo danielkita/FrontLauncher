@@ -21,9 +21,6 @@ module.exports = {
             src: './',
             dest: './',
             dataFile: 'data/template.json',
-            htmlmin: {
-                collapseWhitespace: true
-            },
             extensions: ['html', 'json'],
             excludeFolders: ['layouts', 'components', 'data']
         },
@@ -36,6 +33,11 @@ module.exports = {
             src: 'assets/js',
             dest: 'assets/js',
             extensions: ['js']
+        },
+        svg: {
+            src: 'assets/sprites',
+            dest: 'assets/img',
+            extensions: ['svg']
         }
     }
 }

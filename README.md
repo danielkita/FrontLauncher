@@ -1,7 +1,7 @@
 # FrontLauncher
 ## Installation:
 <p>To install run
-<code>npm install</code><br>
+<code>npm install && bower install</code><br>
 
 ## Features
 - **CSS:** [Sass](http://sass-lang.com/) (scss)
@@ -20,7 +20,7 @@
   - Livereloading after css, js or html change with [BrowserSync](http://www.browsersync.io/)
   - Run server on port 3000 (default) developers tools - port 3001
 - **Notify:**
-  - Notify about error in watch tasks
+  - Notify about error in watch tasks (working on Windows 8 or higher)
 
 
 ## Usage
