@@ -25,7 +25,7 @@ var options = {
     dependencies: true,
 };
 gulp.task('wiredep', function(callback) {
-    gulp.src(path.resolve(config.root.src , config.tasks.html.src , '**/*.html'))
+    gulp.src([path.resolve(config.root.src, '**/*.{html,scss}'),])
         .pipe(wiredep(options))
         .pipe(gulp.dest(path.resolve(config.root.src , config.tasks.html.src)));
     callback();

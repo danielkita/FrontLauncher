@@ -1,2 +1,6 @@
+/*
+  Frontlauncher's gulpfile.js
+*/
+
 var requireDir = require('require-dir');
-var tasks = requireDir('./tasks');
+requireDir('./tasks', { recurse: true })

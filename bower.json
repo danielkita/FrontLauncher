@@ -1,20 +1,18 @@
 {
-  "name": "FrontLauncher",
-  "version": "1.0.0",
-  "authors": [
-    "Daniel Kita <t.trax0@gmail.com>"
-  ],
-  "description": "Frontend's workflow tool",
-  "main": "./index.html",
-  "moduleType": [
-    "globals"
-  ],
-  "license": "MIT",
-  "dependencies": {
-    "normalize.css": "~3.0.3",
-    "jquery": "~2.1.4",
-    "fastclick": "~1.0.6",
-    "modernizr": "~2.8.3",
-    "slick.js": "~1.5.8"
-  }
+    "name": "FrontLauncher",
+    "version": "1.0.0",
+    "authors": ["Daniel Kita <t.trax0@gmail.com>"],
+    "description": "Frontend's workflow tool",
+    "main": "./index.html",
+    "moduleType": ["globals"],
+    "license": "MIT",
+    "dependencies": {
+        "fancybox": "master",
+        "normalize.css": "~3.0.3",
+        "jquery": "~2.1.4",
+        "fastclick": "~1.0.6",
+        "modernizr": "~2.8.3",
+        "sassFW": "http://git.nln.pl:8082/front/sassFW.git#master",
+        "slick.js": "~1.5.3"
+    }
 }

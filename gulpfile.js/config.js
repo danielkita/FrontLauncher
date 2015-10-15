@@ -38,6 +38,12 @@ module.exports = {
             src: 'assets/sprites',
             dest: 'assets/img',
             extensions: ['svg']
+        },
+        iconFont: {
+            src: 'assets/icons',
+            dest: 'assets/fonts',
+            sassDest: '',
+            extensions: ['woff2', 'woff', 'eot', 'ttf', 'svg']
         }
     }
 }
