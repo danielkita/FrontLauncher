@@ -8,7 +8,11 @@
 	<meta name="keywords" content="" >
 	<meta name="theme-color" content="#FFF">
 	<title>{{title}}</title>
-	{% include "components/assets/styles.html" %}
+	{% if dev %}
+		{% include "components/assets/styles.html" %}
+	{% else %}
+		{% include "components/assets/styles.min.html" %}
+	{% endif %}
 
 </head>
 <body>
