@@ -2,9 +2,12 @@
 
 @font-face {
   font-family: "{{fontName}}";
-  font-family:"icons";
-      src: url('{{fontPath}}/{{fontName}}.woff2') format('woff2'),
-           url('{{fontPath}}/{{fontName}}.woff') format('woff');
+    src: url('{{fontPath}}/{{fontName}}.eot'); /* IE9 Compat Modes */
+    src: url('{{fontPath}}/{{fontName}}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('{{fontPath}}/{{fontName}}.woff2') format('woff2'), /* Super Modern Browsers */
+         url('{{fontPath}}/{{fontName}}.woff') format('woff'), /* Pretty Modern Browsers */
+         url('{{fontPath}}/{{fontName}}.ttf')  format('truetype'), /* Safari, Android, iOS */
+         url('{{fontPath}}/{{fontName}}.svg#{{fontName}}') format('svg'); /* Legacy iOS */
   font-weight: normal;
   font-style: normal;
 }

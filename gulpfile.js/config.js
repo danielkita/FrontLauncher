@@ -43,7 +43,7 @@ module.exports = {
             src: 'assets/icons',
             dest: 'assets/fonts',
             sassDest: '',
-            extensions: ['woff2', 'woff']
+            extensions: ['woff2', 'woff', 'eot', 'ttf', 'svg']
         }
     }
 }
