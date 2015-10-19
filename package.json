@@ -30,6 +30,7 @@
     "node-bourbon": "^4.2.3",
     "node-neat": "^1.7.2",
     "require-dir": "^0.3.0",
+    "slash": "^1.0.0",
     "wiredep": "^2.2.2"
   },
   "author": "Daniel Kita <t.trax0@gmail.com>",
