@@ -5,7 +5,8 @@ var browserSync = require('browser-sync').create();
 
 var options = {
   server: {
-    baseDir: path.resolve(config.root.dest, config.tasks.html.dest)
+    baseDir: path.resolve(config.root.dest, config.tasks.html.dest),
+    directory:true
   }
 }
 gulp.task('browserSync', function() {
