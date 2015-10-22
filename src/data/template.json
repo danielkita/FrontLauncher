@@ -1,5 +1,4 @@
 {
- "dev": false,
- "title":"Welcome to FrontLauncher",
- "test": "trololololo"
+ "dev": true,
+ "title":"Welcome to FrontLauncher"
 }

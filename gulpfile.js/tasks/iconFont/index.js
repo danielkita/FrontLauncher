@@ -29,7 +29,10 @@ var settings = {
     timestamp: 0,
     fontName: 'icons',
     appendUnicode: true,
-    normalize: false,
+    normalize: true,
+    fontHeight: 512,
+    descent:64,
+    round:10e12,
     formats: config.tasks.iconFont.extensions
   }
 }
