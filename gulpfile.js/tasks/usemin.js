@@ -15,6 +15,7 @@ gulp.task('usemin', function() {
   return gulp.src(paths.src)
     .pipe(usemin({
       assetsDir: config.root.dest,
+      path: '',
       css: [minifyCss, 'concat'],
       js: [uglify],
       inlinejs: [ uglify ],

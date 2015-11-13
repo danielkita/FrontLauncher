@@ -9,6 +9,9 @@ module.exports = {
             dest: 'assets/css',
             main: 'app.scss',
             extensions: ['sass', 'scss'],
+            autoprefixer: {
+                browsers: ["> 0.5% in PL"]
+            },
             sassGlobbing: {
                 extensions: ['.scss']
             }

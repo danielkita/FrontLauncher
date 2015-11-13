@@ -9,7 +9,7 @@ gulp.task('wiredep', function() {
 });
 
 var optionsHTML = {
-    ignorePath: '../../../' + path.normalize(config.root.dest) + '/',
+    ignorePath: '../' + path.normalize(config.root.dest) + '/',
     overrides: {
         'modernizr': {
             "main": 'modernizr.js'
@@ -25,13 +25,19 @@ var optionsHTML = {
         "jQuery-Validation-Engine": {
             "main": ["./js/jquery.validationEngine.js", "./js/languages/jquery.validationEngine-pl.js", "./css/validationEngine.jquery.css"]
         },
+        "semantic-ui-sass": {
+            "main": ["./app/assets/stylesheets/_semantic-ui.scss","./app/assets/javascripts/semantic-ui.js"]
+        },                
+        "responsive-tabs": {
+            "main": ["./js/jquery.responsiveTabs.js"]
+        },
     },
     devDependencies: true,
     dependencies: true,
 };
 
 gulp.task('wiredep-html', function(callback) {
-    gulp.src([path.resolve(config.root.src, '**/*.html'),])
+    gulp.src([path.join(config.root.src, '*.html'),])
         .pipe(wiredep(optionsHTML))
         .pipe(gulp.dest(path.resolve(config.root.src)));
     callback();
@@ -45,7 +51,7 @@ var optionsSASS = {
 
 
 gulp.task('wiredep-sass', function(callback) {
-    gulp.src([path.resolve(config.root.src, '**/*.scss'),])
+    gulp.src([path.resolve(config.root.src, '**/app.scss'),])
         .pipe(wiredep(optionsSASS))
         .pipe(gulp.dest(path.resolve(config.root.src)));
     callback();

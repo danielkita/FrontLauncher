@@ -22,7 +22,7 @@ var getData = function(file) {
 gulp.task('html', function() {
   render.nunjucks.configure([path.resolve(config.root.src, config.tasks.html.src)], {watch: false })
   return gulp.src(paths.src)
-    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
+    .pipe(plumber({errorHandler: notify.onError("error, LINE:<%= error.lineNumber %>: MESSAGE: <%= error.message %>")}))
     .pipe(data(getData))
     .pipe(plumber())
     .pipe(render())

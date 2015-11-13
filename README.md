@@ -29,5 +29,4 @@
 |----------------|---------------------------------------------------------------------------------------------------------------------------------|
 | watch(default) | Watch for changes assets files and run BrowserSync server                                                                       |
 | wiredep        | Inject bower packages into all html files                                                                                       |
-| build          | Concat, minify all assets                                                                                                       |
-| iconFont       | Generate webfont                                                                                                                |
+| build          | Build public views with assets and components                                                                                   |
