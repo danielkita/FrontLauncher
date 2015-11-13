@@ -4,6 +4,8 @@ module.exports = {
         dest: './public',
     },
     tasks: {
+        assets: ['iconFont', 'images', 'svg'],
+        code: ['html', 'sass', 'js'],
         sass: {
             src: 'assets/sass',
             dest: 'assets/css',
@@ -18,7 +20,7 @@ module.exports = {
         },
         bower: {
             src: './bower_components',
-            extensions: ['gif', 'jpg', 'png', 'woff', 'eot', 'svg', 'ttf']
+            extensions: ['gif', 'jpg', 'png', 'woff', 'woff2', 'eot', 'svg', 'ttf']
         },
         html: {
             src: './',

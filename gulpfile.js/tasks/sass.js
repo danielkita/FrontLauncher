@@ -1,15 +1,14 @@
-var gulp = require('gulp')
-var config = require('../config')
-var path = require('path')
-var browserSync = require('browser-sync')
-var notify = require("gulp-notify")
-var sass = require('gulp-sass')
-var cssGlobbing = require('gulp-css-globbing')
-var sourcemaps = require('gulp-sourcemaps')
+var gulp         = require('gulp')
+var config       = require('../config')
+var path         = require('path')
+var browserSync  = require('browser-sync')
+var handleErrors = require('../lib/handleErrors')
+var sass         = require('gulp-sass')
+var cssGlobbing  = require('gulp-css-globbing')
+var sourcemaps   = require('gulp-sourcemaps')
 var autoprefixer = require('gulp-autoprefixer')
-var neat = require('node-neat')
-var plumber = require('gulp-plumber')
-var bourbon = require('node-bourbon')
+var neat         = require('node-neat')
+var bourbon      = require('node-bourbon')
 
 var paths = {
     src: path.resolve(config.root.src, config.tasks.sass.src, config.tasks.sass.main),
@@ -22,12 +21,12 @@ var options = {
 } 
 gulp.task('sass', function() {
     gulp.src(paths.src)
-        .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
         .pipe(sourcemaps.init())
         .pipe(cssGlobbing(config.tasks.sass.sassGlobbing))
         .pipe(sass(options))
+        .on('error', handleErrors)
         .pipe(autoprefixer(config.tasks.sass.autoprefixer))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(paths.dest))
-        .pipe(browserSync.reload({stream:true}));
+        .pipe(browserSync.stream({match: '**/*.css'}))
 });

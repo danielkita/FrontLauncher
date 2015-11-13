@@ -15,5 +15,5 @@ gulp.task('images', function() {
     .pipe(changed(paths.dest))
     .pipe(imagemin())
     .pipe(gulp.dest(paths.dest))
-    .pipe(browserSync.reload({stream:true}))
+    .pipe(browserSync.stream())
 })

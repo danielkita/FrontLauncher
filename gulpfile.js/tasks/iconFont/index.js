@@ -1,10 +1,9 @@
 var config = require('../../config')
 var gulp = require('gulp')
 var iconfont = require('gulp-iconfont')
-var notify = require("gulp-notify")
+var handleErrors = require('../../lib/handleErrors')
 var generateIconSass = require('./generateIconSass')
 var generateTemplate = require('./generateTemplate')
-var plumber = require('gulp-plumber')
 var path = require('path')
 var slash = require('slash')
 
@@ -39,8 +38,8 @@ var settings = {
 
 gulp.task('iconFont', function() {
   return gulp.src(settings.src)
-    .pipe(plumber({errorHandler: notify.onError("Error: <%= error.message %>")}))
     .pipe(iconfont(settings.options))
+    .on('error', handleErrors)
     .on('glyphs', generateIconSass(settings))
     .on('glyphs', generateTemplate(settings))
     .pipe(gulp.dest(settings.dest))

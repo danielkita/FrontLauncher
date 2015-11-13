@@ -27,7 +27,13 @@ var optionsHTML = {
         },
         "semantic-ui-sass": {
             "main": ["./app/assets/stylesheets/_semantic-ui.scss","./app/assets/javascripts/semantic-ui.js"]
-        },                
+        },
+        "semantic": {
+            "main": ["dist/semantic.css","dist/semantic.js"]
+        },
+        "semantic-ui-rating": {
+            "main": ["rating.css","rating.js"]
+        },          
         "responsive-tabs": {
             "main": ["./js/jquery.responsiveTabs.js"]
         },

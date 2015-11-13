@@ -1,6 +1,6 @@
-var gulp = require('gulp');
-var config = require('../config')
-var path = require('path');
+var gulp    = require('gulp');
+var config  = require('../config')
+var path    = require('path');
 var flatten = require('gulp-flatten');
 
 
