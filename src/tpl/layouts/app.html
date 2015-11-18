@@ -8,21 +8,24 @@
 	<meta name="keywords" content="" >
 	<meta name="theme-color" content="#FFF">
 	<title>{{title}}</title>
+	<base href="{{tplAssets}}"/>
+
 	{% if dev %}
-		{% include "components/assets/styles.html" %}
+		{% include "styles.html" %}
 	{% else %}
-		{% include "components/assets/styles.min.html" %}
+		{% include "styles.min.html" %}
 	{% endif %}
 
 </head>
 <body>
-	{% include "components/header.html" %}
+	{% include "tpl/components/header.html" %}
 	{% block content %}{% endblock %}
-	{% include "components/footer.html" %}
+	{% include "tpl/components/footer.html" %}
+
 	{% if dev %}
-		{% include "components/assets/scripts.html" %}
+		{% include "scripts.html" %}
 	{% else %}
-		{% include "components/assets/scripts.min.html" %}
+		{% include "scripts.min.html" %}
 	{% endif %}
 </body>
 </html>
