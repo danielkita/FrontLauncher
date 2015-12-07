@@ -12,7 +12,7 @@ module.exports = {
             main: 'app.scss',
             extensions: ['sass', 'scss'],
             autoprefixer: {
-                browsers: ["> 0.5% in PL"]
+                browsers: ["> 0.2% in PL"]
             },
             sassGlobbing: {
                 extensions: ['.scss']
