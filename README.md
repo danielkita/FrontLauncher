@@ -7,6 +7,7 @@
 - **CSS:** [Sass](http://sass-lang.com/) (scss)
   - Libsass (node-sass) for ultra light compiles
   - CSS globbing import for Sass partials
+  - Autoprefixer
   - [Bourbon](http://bourbon.io/) and [Neat](http://neat.bourbon.io/) included
 - **JS:**
   - Uglify and minify scripts
@@ -30,3 +31,4 @@
 | watch(default) | Watch for changes assets files and run BrowserSync server                                                                       |
 | wiredep        | Inject bower packages into all html files                                                                                       |
 | build          | Build public views with assets and components                                                                                   |
+

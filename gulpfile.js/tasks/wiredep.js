@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var config = require('../config');
 var path = require('path');
+var handleErrors = require('../lib/handleErrors')
 var wiredep = require('wiredep').stream;
 
 gulp.task('wiredep', function() {
@@ -33,7 +34,16 @@ var optionsHTML = {
         },
         "semantic-ui-rating": {
             "main": ["rating.css","rating.js"]
-        },          
+        },
+        "semantic-ui-dropdown": {
+            "main": ["dropdown.css","dropdown.js"]
+        },
+        "semantic-ui-transition": {
+            "main": ["transition.css","transition.js"]
+        },
+        "semantic-ui-accordion": {
+            "main": ["accordion.css","accordion.js"]
+        },
         "responsive-tabs": {
             "main": ["./js/jquery.responsiveTabs.js"]
         },
@@ -45,6 +55,7 @@ var optionsHTML = {
 gulp.task('wiredep-html', function(callback) {
     gulp.src([path.join(config.root.src, '*.html'),])
         .pipe(wiredep(optionsHTML))
+        .on('error', handleErrors)
         .pipe(gulp.dest(path.resolve(config.root.src)));
     callback();
 });
@@ -59,6 +70,7 @@ var optionsSASS = {
 gulp.task('wiredep-sass', function(callback) {
     gulp.src([path.resolve(config.root.src, '**/app.scss'),])
         .pipe(wiredep(optionsSASS))
+        .on('error', handleErrors)
         .pipe(gulp.dest(path.resolve(config.root.src)));
     callback();
 });
