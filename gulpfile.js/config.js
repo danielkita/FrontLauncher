@@ -18,6 +18,10 @@ module.exports = {
                 extensions: ['.scss']
             }
         },
+        static: {
+            "src": "static",
+            "dest": "./"
+        },
         bower: {
             src: './bower_components',
             extensions: ['gif', 'jpg', 'png', 'woff', 'woff2', 'eot', 'svg', 'ttf']
@@ -37,6 +41,10 @@ module.exports = {
         js: {
             src: 'assets/js',
             dest: 'assets/js',
+            extractSharedJs: true,
+            entries: {
+                app: ["./app.js"]
+              }, 
             extensions: ['js']
         },
         svg: {
