@@ -1,7 +1,9 @@
 # FrontLauncher
 ## Installation:
-<p>To install run just...
-<code>npm i</code><br>
+
+<p>To install run just
+  <code>npm i</code>
+</p>
 
 
 ## Features
@@ -38,4 +40,7 @@
 
 
 #### Issues
-If you can't install package on Windows you probably don't meet requirements to install [node-gyp](https://github.com/nodejs/node-gyp) 
+
+<p>
+    If you can't install package on Windows you probably don't meet requirements to install [node-gyp](https://github.com/nodejs/node-gyp) 
+</p>
