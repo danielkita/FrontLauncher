@@ -1,7 +1,8 @@
 # FrontLauncher
 ## Installation:
-<p>To install run
-<code>npm install && bower install</code><br>
+<p>To install run just...
+<code>npm i</code><br>
+
 
 ## Features
 - **CSS:** [Sass](http://sass-lang.com/) (scss)
@@ -11,10 +12,9 @@
   - [Bourbon](http://bourbon.io/) and [Neat](http://neat.bourbon.io/) included
 - **JS:**
   - Uglify and minify scripts
+  - [Webpack](https://webpack.github.io/) as a module bundler
 - **HTML:**
   - Templates are compiled with [Nunjucks](https://mozilla.github.io/nunjucks/)
-  - Wiredep - install [Bower](http://bower.io/) packages
-  - Concat and uglify vendor's assets
 - **Images:**
   - Compress images from assets/img
 - **Livereload:**
@@ -28,7 +28,14 @@
 
 | Command        | Description                                                                                                                     |
 |----------------|---------------------------------------------------------------------------------------------------------------------------------|
-| watch(default) | Watch for changes assets files and run BrowserSync server                                                                       |
-| wiredep        | Inject bower packages into all html files                                                                                       |
+| watch(default) | Run build, start watch for changes assets files and run BrowserSync server                                                      |
 | build          | Build public views with assets and components                                                                                   |
+| production     | Build public views with minified assets and components to production                                                            |
 
+<p>
+   Bower and wiredep is deprecated and will be removed in future version
+</p>
+
+
+#### Issues
+If you can't install package on Windows you probably don't meet requirements to install [node-gyp](https://github.com/nodejs/node-gyp) 

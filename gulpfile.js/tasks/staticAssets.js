@@ -4,8 +4,8 @@ var gulp    = require('gulp')
 var path    = require('path')
 
 var paths = {
-  src: path.join(config.root.src, config.tasks.static.src, '/**'),
-  dest: path.join(config.root.dest, config.tasks.static.dest)
+  src: path.join(config.root.src, config.tasks.staticAssets.src, '/**'),
+  dest: path.join(config.root.dest, config.tasks.staticAssets.dest)
 }
 
 var staticTask = function() {
@@ -14,5 +14,5 @@ var staticTask = function() {
     .pipe(gulp.dest(paths.dest))
 }
 
-gulp.task('static', staticTask)
+gulp.task('staticAssets', staticTask)
 module.exports = staticTask

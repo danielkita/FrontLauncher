@@ -18,8 +18,10 @@ var getData = function(file) {
   var dataPath = path.resolve(config.root.src, config.tasks.html.src, config.tasks.html.dataFile)
   return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
 }
+
+
 gulp.task('html', function() {
-  render.nunjucks.configure([path.resolve(config.root.src, config.tasks.html.src)], {watch: false })
+  var env = render.nunjucks.configure([path.resolve(config.root.src, config.tasks.html.src)], {watch: false })
   return gulp.src(paths.src)
     .pipe(data(getData))
     .on('error', handleErrors)

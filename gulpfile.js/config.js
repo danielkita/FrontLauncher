@@ -4,7 +4,7 @@ module.exports = {
         dest: './public',
     },
     tasks: {
-        assets: ['iconFont', 'images', 'svg'],
+        assets: ['staticAssets', 'fonts', 'iconFont', 'images', 'svg'],
         code: ['html', 'sass', 'js'],
         sass: {
             src: 'assets/sass',
@@ -12,15 +12,15 @@ module.exports = {
             main: 'app.scss',
             extensions: ['sass', 'scss'],
             autoprefixer: {
-                browsers: ["> 0.2% in PL"]
+                browsers: ["> 0.1% in PL"]
             },
             sassGlobbing: {
                 extensions: ['.scss']
             }
         },
-        static: {
-            "src": "static",
-            "dest": "./"
+        staticAssets: {
+            src: 'assets/static',
+            dest: './'
         },
         bower: {
             src: './bower_components',
@@ -44,13 +44,18 @@ module.exports = {
             extractSharedJs: true,
             entries: {
                 app: ["./app.js"]
-              }, 
+              },
             extensions: ['js']
         },
         svg: {
             src: 'assets/sprites',
             dest: 'assets/img',
             extensions: ['svg']
+        },
+        fonts: {
+            src: "assets/fonts",
+            dest: "assets/fonts",
+            extensions: ["woff2", "woff", "eot", "ttf", "svg"]
         },
         iconFont: {
             src: 'assets/icons',
