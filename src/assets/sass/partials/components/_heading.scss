@@ -1,0 +1,48 @@
+.heading{
+	@include headings(){
+		font-weight: 300;
+		font-family: $light;
+		b{
+			font-family: $medium;
+			font-weight: 500;
+		}	
+	}
+	h1{
+		font-size: em(44);
+		line-height: em(57,45);
+		margin-top: em(30,44);
+	}
+	h2.color{
+		color:#2e3646;
+		font-size: em(44);
+		line-height: em(38,45);
+		padding-left: em(40,44);
+		position: relative;
+		margin-top: 0;
+		&:before{
+			content:"";
+			position: absolute;
+			display: block;
+			width: 7px;
+			height: 100%;
+			left: 0;
+			top: 0;
+			border-radius: 5px;
+			background: red;
+		}
+		&--green:before{
+			background: $green;
+		}
+		&--blue:before{
+			background: $blue;
+		}
+		&--navy:before{
+			background: $navy;
+		}
+	}
+	h3{
+		font-weight: 400;
+		font-family: $book;
+		font-size:em(30);
+	}
+}

@@ -30,7 +30,7 @@ module.exports = function(env) {
       loaders: [
         {
           test: /\.js$/,
-          loader: 'babel-loader',
+          loader: 'babel-loader?presets[]=es2015',
           exclude: /node_modules/
         },
         {

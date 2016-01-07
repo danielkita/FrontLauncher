@@ -1,0 +1,25 @@
+$medium: 'GothamMedium';
+$book: 'GothamBook';
+$light: 'GothamLight';
+
+
+$em-base: 14px;
+$base-color: #858484;
+$base-font: $light, Arial, sans-serif;
+$base-font-weight: 300;
+
+//grid
+
+//$max-width: em(1200) !default;
+// /$gutter: em(12) !default;
+
+//fonts list
+$fonts: $light $book $medium;
+
+//colors
+$green: #77cd4a;
+$blue: #538bf4;
+$navy: #2e3646;
+
+//sassFW settings
+$fullHD: false;
