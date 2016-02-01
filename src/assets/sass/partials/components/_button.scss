@@ -1,33 +1,3 @@
 .btn{
 	display: inline-block;
-	font-family: $medium;
-	&--std{
-		padding: em(8,12) em(28,12);
-		border-radius: em(21,12);
-		color:#fff;
-		text-transform: uppercase;
-		font-size: em(12);
-		transition:.2s ease-in-out;
-		&:hover{
-			background: #fff;
-		}
-	}
-	&--green{
-		background: $green;
-		&:hover{
-			color:$green;
-		}
-	}
-	&--blue{
-		background: $blue;
-		&:hover{
-			color:$blue;
-		}
-	}
-	&--navy{
-		background: $navy;
-		&:hover{
-			color: $navy;
-		}
-	}
 }

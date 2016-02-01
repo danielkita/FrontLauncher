@@ -10,7 +10,7 @@ body {
 	font-size: $em-base;
 	font-weight: $base-font-weight;
 	color:$base-color;
-	line-height: em(22);
+	line-height: 1.2em;
 }
 .wrapper {
 	width: 92%;
@@ -30,17 +30,4 @@ a {
 
 .slick-slide img{
 	display: inline-block;
-}
-blockquote{
-	margin: 0;
-	font-family: $medium;
-	font-style: italic;
-}
-
-.baseGrid{
-	@include clearfix;
-    .col {
-        @include span-columns(3);
-        @include omega(4n);
-    }
 }
