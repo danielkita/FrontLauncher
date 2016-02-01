@@ -5,21 +5,14 @@
 @import "settings";
 
 //----------------------------------*\
-// FONTS 
-//----------------------------------*/
-
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700,800&subset=latin,latin-ext);
-
-//----------------------------------*\
 // FRAMEWORKS
 //----------------------------------*/
 
 @import "bourbon";
+@import "grid-settings";
 @import "neat";
-// bower:scss
-@import "../../../public/bower_components/sass-burger/_burger.scss";
-@import "../../../public/bower_components/sassFW/_sassFW.scss";
-// endbower
+@import "vendor/sass-burger/_burger.scss";
+@import "vendor/sassFW/_sassFW.scss";
 
 //----------------------------------*\
 // COMPONENTS

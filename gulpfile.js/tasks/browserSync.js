@@ -1,6 +1,6 @@
 var gulp        = require('gulp');
 var config      = require('../config')
-var path = require('path');
+var path 		= require('path');
 var browserSync = require('browser-sync')
 
 var options = {

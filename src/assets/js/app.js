@@ -1,26 +1,25 @@
-"use strict";
+//Include NPM packages (es6)
+import normalize from '!style!css!sass!normalize.scss/normalize.scss';
+import FastClick from 'fastclick';
 
-$(document).ready(function(){
+//Main 
+var App = {
+	initialize: function(){
+	    FastClick.attach(document.body);
+	},
+	init: function(){
+		let self = this;
+		document.addEventListener('DOMContentLoaded', function() {
+			self.initialize();
+		}, false);
 
-	/*Default Begin*/
-		FastClick.attach(document.body);
-		$('.fancybox').fancybox();
-	/*Default End*/
+		window.onload = function() {
+		};
 
-	
+		window.onresize = function() {
 
-});
+		};
+	}
+}
 
-$(window).load(function(){
-
-	
-
-});
-
-$(window).resize(function(){
-
-	
-
-});
-
-/*Functions*/
+App.init();

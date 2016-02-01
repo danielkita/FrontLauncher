@@ -1,5 +1,6 @@
 {
- "dev": true,
- "title":"Welcome to FrontLauncher",
- "tplAssets":"/"
+    "dev": true,
+    "tplAssets": "/",
+    "homepage": "",
+    "title": "Intellect_CMS"
 }

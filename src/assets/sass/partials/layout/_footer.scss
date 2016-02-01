@@ -1,3 +1,31 @@
-footer {
-
+footer{
+	background: #1f2635;
+	.top{
+		.wrapper.first>.wrapper{
+			display: flex;
+			justify-content: space-between;
+		}
+		.col:first-child {
+			width:32%;
+		}
+		.col:nth-child(2){
+			width: 36.85%;
+		}
+		.col:last-child{
+			width: 18%;
+		}
+	}
+	.bottom{
+		border-top: 1px solid #2b3240;
+		color:#566178;
+		a{
+			color:#fff;
+		}
+		.left{
+			font-size:em(14);
+		}
+		.wrapper{
+			@include clearfix;
+		}
+	}
 }
