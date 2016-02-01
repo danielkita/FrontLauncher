@@ -10,7 +10,7 @@ var fs           = require('fs')
 var exclude = path.normalize('!**/{' + config.tasks.html.excludeFolders.join(',') + '}/**')
 
 var paths = {
-  src: [path.join(config.root.src, config.tasks.html.src, '/**/*.html'), exclude],
+  src: [path.join(config.root.src, config.tasks.html.src, '**/*.{' + config.tasks.html.extensions.join(',') + '}'), exclude],
   dest: path.resolve(config.root.dest, config.tasks.html.dest),
 }
 
