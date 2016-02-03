@@ -9,14 +9,12 @@
 //----------------------------------*/
 
 @import "bourbon";
-@import "grid-settings";
 @import "neat";
-@import "vendor/sass-burger/_burger.scss";
+//@import "vendor/sass-burger/_burger.scss";
 @import "vendor/sassFW/_sassFW.scss";
 
 //----------------------------------*\
 // COMPONENTS
 //----------------------------------*/
 
-@import "icons";
 @import "partials/**/*";

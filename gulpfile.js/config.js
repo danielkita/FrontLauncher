@@ -60,7 +60,7 @@ module.exports = {
         iconFont: {
             src: 'assets/icons',
             dest: 'assets/fonts',
-            sassDest: '',
+            sassDest: 'partials/',
             extensions: ['woff2', 'woff', 'eot', 'ttf', 'svg']
         }
     }
