@@ -42,6 +42,10 @@ module.exports = function(env) {
           test: /\.scss$/,
           loader: 'style!css!sass',
           exclude: /node_modules/
+        },
+        { 
+          test: /\.(png|jpg|gif|jpeg|svg)$/,
+          loader: "url-loader?limit=100000" 
         }
       ]
     }
