@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="pl" class="no-js">
+<html lang="pl">
 {% include 'tpl/layouts/components/head.html' %}
 <body>
 
-	{% include "tpl/components/header.html" %}
+	{% include "tpl/partials/header.html" %}
 
 	{% block topContent %}{% endblock %}
 	{% block contentView %}{% endblock %}
 
-	{% include "tpl/components/footer.html" %}
+	{% include "tpl/partials/footer.html" %}
 
 	{% include 'tpl/layouts/components/tail.html' %}
 </body>

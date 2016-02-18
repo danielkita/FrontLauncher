@@ -1,14 +1,25 @@
-//Include NPM packages (es6)
-import normalize from '!style!css!sass!normalize.scss/normalize.scss';
-import FastClick from 'fastclick';
+/*
+	FrontLaucher main js file 
+*/
 
-//Main 
-var App = {
+//es6 style
+import FastClick from 'fastclick';
+import slick from 'slick-carousel';
+import '!style!css!slick-carousel/slick/slick.css';
+//import './foundation';
+//require.js style
+require('!style!css!fancybox/dist/css/jquery.fancybox.css');
+require("expose?jQuery!jquery"); // global jquery (but shouldn't be used without webpack)
+const fancybox = require('fancybox')($);
+
+
+const App = {
 	initialize: function(){
 	    FastClick.attach(document.body);
+	    $('.fancybox').fancybox();
 	},
 	init: function(){
-		let self = this;
+		const self = this;
 		document.addEventListener('DOMContentLoaded', function() {
 			self.initialize();
 		}, false);

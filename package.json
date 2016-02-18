@@ -1,7 +1,8 @@
 {
   "name": "FrontLauncher",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "",
+  "private": true,
   "main": "gulpfile.js",
   "devDependencies": {
     "babel-core": "^6.3.15",
@@ -43,8 +44,6 @@
     "gulp-watch": "^4.3.4",
     "imports-loader": "^0.6.5",
     "lodash": "^3.10.0",
-    "node-bourbon": "^4.2.3",
-    "node-neat": "^1.7.2",
     "pretty-hrtime": "~1.0.0",
     "require-dir": "^0.3.0",
     "sass-loader": "^3.1.2",
@@ -60,8 +59,8 @@
   "dependencies": {
     "fancybox": "^3.0.0",
     "fastclick": "^1.0.6",
+    "foundation-sites": "^6.1.2",
     "jquery-match-height": "^0.7.0",
-    "normalize.scss": "^0.1.0",
     "slick-carousel": "^1.5.9"
   }
 }

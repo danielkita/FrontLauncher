@@ -1,6 +1,7 @@
 # FrontLauncher
 ## Installation:
 
+Make sure that you have latest node.js version
 <p>To install run just
   <code>npm i</code>
 </p>
@@ -38,9 +39,3 @@
    Bower and wiredep is deprecated and will be removed in future version
 </p>
 
-
-#### Issues
-
-<p>
-    If you can't install package on Windows you probably don't meet requirements to install [node-gyp](https://github.com/nodejs/node-gyp) 
-</p>

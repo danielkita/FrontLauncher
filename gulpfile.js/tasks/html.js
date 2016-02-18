@@ -19,8 +19,7 @@ var getData = function(file) {
   return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
 }
 
-
-gulp.task('html', function() {
+var htmlTask = function() {
   var env = render.nunjucks.configure([path.resolve(config.root.src, config.tasks.html.src)], {watch: false })
   return gulp.src(paths.src)
     .pipe(data(getData))
@@ -29,4 +28,8 @@ gulp.task('html', function() {
     .on('error', handleErrors)
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
-})
+  
+}
+
+gulp.task('html', htmlTask)
+module.exports = htmlTask

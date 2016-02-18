@@ -4,6 +4,9 @@ var config       = require('../config')
 var getEnabledTasks = require('../lib/getEnabledTasks')
 var tasks = getEnabledTasks('watch')
 
-gulp.task('build', function(cb) {
-    gulpSequence(tasks.assetTasks, tasks.codeTasks,['copy', 'usemin'], 'vendorcss', cb);
-});
+
+var buildTask = function(cb) {
+    gulpSequence('clean', tasks.assetTasks, tasks.codeTasks, cb);
+}
+gulp.task('build', buildTask);
+module.exports = buildTask

@@ -1,6 +1,9 @@
 {
     "dev": true,
     "tplAssets": "/",
-    "homepage": "",
-    "title": "Intellect_CMS"
+    "app":{
+    	"getMetaDescription":"METADESC",
+    	"getMetaKeywords": "KEYWORDS",
+    	"getMetaTitle": "FrontLauncher"	
+    }
 }

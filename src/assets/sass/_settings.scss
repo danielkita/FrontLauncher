@@ -1,8 +1,33 @@
+/* 
+	SETTINGS
+	you should set it before start project
+ */
 
-$em-base: 16px;
-$base-color: #FFF;
-$base-font: 'Open Sans', Arial, sans-serif;
-$base-font-weight: 400;
+// Layout
+$global-width: 1200px;
+$global-radius: 0;
+$wrapperPercentWidth: 92%; // (if you use wrapper boxed layout)
 
-//sassFW settings
-$fullHD: false;
+// Typography
+$body-font-color: #000;
+$global-font-size: 16px;
+$global-weight-normal: 400;
+$global-weight-bold: 700;
+$global-lineheight: 1.5;
+$body-font-family: 'Open Sans', Arial, sans-serif;
+
+// Colors
+$primary-color: #ff8840;
+
+// Breakpoints
+$breakpoint-classes: (small phone medium tablet large xlarge);
+
+$breakpoints: (
+    small: 0px,
+    phone: 450px,
+    medium: 640px,
+    tablet: 768px,
+    large: 1024px,
+    xlarge: 1200px,
+    xxlarge: 1440px,
+  );

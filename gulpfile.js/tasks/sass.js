@@ -7,19 +7,17 @@ var sass         = require('gulp-sass')
 var cssGlobbing  = require('gulp-css-globbing')
 var sourcemaps   = require('gulp-sourcemaps')
 var autoprefixer = require('gulp-autoprefixer')
-var neat         = require('node-neat')
-var bourbon      = require('node-bourbon')
 
 var paths = {
     src: path.resolve(config.root.src, config.tasks.sass.src, config.tasks.sass.main),
     dest: path.resolve(config.root.dest, config.tasks.sass.dest)
 }
 var options = {
-    includePaths: neat.with().concat(bourbon),
+    includePaths: ['node_modules/foundation-sites/scss'],
     outputStyle: 'compressed', // nested, expanded, compact, compressed
     sourceComments: false,
 } 
-gulp.task('sass', function() {
+var sassTask = function() {
     gulp.src(paths.src)
         .pipe(sourcemaps.init())
         .pipe(cssGlobbing(config.tasks.sass.sassGlobbing))
@@ -29,4 +27,6 @@ gulp.task('sass', function() {
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(paths.dest))
         .pipe(browserSync.stream({match: '**/*.css'}))
-});
+}
+gulp.task('sass', sassTask)
+module.exports = sassTask
