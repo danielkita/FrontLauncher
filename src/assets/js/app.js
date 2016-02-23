@@ -16,12 +16,14 @@ const fancybox = require('fancybox')($);
 const App = {
 	initialize: function(){
 	    FastClick.attach(document.body);
-	    $('.fancybox').fancybox();
+	    $('.fancybox').fancybox({
+	    	'title': this.title
+	    });
 	},
 	init: function(){
 		const self = this;
 		document.addEventListener('DOMContentLoaded', function() {
-			self.initialize();
+			self.initialize();  
 		}, false);
 
 		window.onload = function() {
