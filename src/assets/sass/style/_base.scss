@@ -1,3 +1,6 @@
+body{
+	touch-action: manipulation;
+}
 .wrapper {
 	width: $wrapperPercentWidth;
 	margin: 0px auto;

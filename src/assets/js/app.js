@@ -3,7 +3,6 @@
 */
 
 //es6 style
-import FastClick from 'fastclick';
 import slick from 'slick-carousel';
 import '!style!css!slick-carousel/slick/slick.css';
 //import './foundation';
@@ -14,8 +13,20 @@ const fancybox = require('fancybox')($);
 
 
 const App = {
+	startFastClick: function() {
+		if ('touchAction' in document.body.style) {
+		    document.body.style.touchAction = 'manipulation';
+		} else {
+		    require.ensure(['fastclick'], (require) => {
+		        const FastClick = require('fastclick');
+
+		        window.addEventListener('load', () => {
+		            FastClick.attach(document.body);
+		        });
+		    }, 'fastclick');
+		}
+	},
 	initialize: function(){
-	    FastClick.attach(document.body);
 	    $('.fancybox').fancybox({
 	    	'title': this.title
 	    });
@@ -23,6 +34,7 @@ const App = {
 	init: function(){
 		const self = this;
 		document.addEventListener('DOMContentLoaded', function() {
+			self.startFastClick();  
 			self.initialize();  
 		}, false);
 
