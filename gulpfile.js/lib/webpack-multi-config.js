@@ -29,7 +29,7 @@ module.exports = function(env) {
     module: {
       loaders: [
         {
-          test: /\.js$/,
+          test: /\.jsx?$/,
           loader: 'babel-loader?presets[]=es2015',
           exclude: /node_modules/
         },
