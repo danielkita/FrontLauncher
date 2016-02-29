@@ -1,5 +1,4 @@
 var config = require('../config')
-var compact = require('lodash/array/compact')
 
 // Grouped by what can run in parallel
 var assetTasks = config.tasks.assets
@@ -22,7 +21,7 @@ module.exports = function(env) {
   }
 
   return {
-    assetTasks: compact(assetTasks.map(matchFilter)),
-    codeTasks: compact(codeTasks.map(matchFilter))
+    assetTasks: assetTasks.map(matchFilter).filter(Boolean),
+    codeTasks: codeTasks.map(matchFilter).filter(Boolean)
   }
 }

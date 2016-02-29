@@ -27,9 +27,7 @@ const App = {
 		}
 	},
 	initialize: function(){
-	    $('.fancybox').fancybox({
-	    	'title': this.title
-	    });
+	    $('.fancybox').fancybox();
 	},
 	init: function(){
 		const self = this;
