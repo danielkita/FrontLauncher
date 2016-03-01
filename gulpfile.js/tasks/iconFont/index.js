@@ -27,7 +27,7 @@ var settings = {
     svg: true,
     timestamp: 0,
     fontName: 'icons',
-    appendUnicode: true,
+    prependUnicode: true,
     normalize: true,
     fontHeight: 512,
     descent:64,

@@ -18,13 +18,20 @@ var getData = function(file) {
   var dataPath = path.resolve(config.root.src, config.tasks.html.src, config.tasks.html.dataFile)
   return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
 }
+var nunjucksPath = path.resolve(config.root.src, config.tasks.html.src);
+var nunjucksOptions = {
+    path: nunjucksPath,
+    envOptions: {
+      watch: false
+    }
+}
+
 
 var htmlTask = function() {
-  var env = render.nunjucks.configure([path.resolve(config.root.src, config.tasks.html.src)], {watch: false })
   return gulp.src(paths.src)
     .pipe(data(getData))
     .on('error', handleErrors)
-    .pipe(render())
+    .pipe(render(nunjucksOptions))
     .on('error', handleErrors)
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
