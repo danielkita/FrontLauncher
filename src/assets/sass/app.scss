@@ -8,12 +8,17 @@
 // FRAMEWORKS
 //----------------------------------*/
 
-@import "foundation";
-@import "foundationPartials";
-@import "vendor/sassFW/_sassFW.scss";
+@import "foundation",
+		"foundationPartials",
+		"stylesheets/vendor/sassFW/_sassFW.scss";
 
 //----------------------------------*\
 // COMPONENTS
 //----------------------------------*/
 
-@import "style/**/*";
+@import "stylesheets/abstracts/**/*";
+@import "stylesheets/base/**/*";
+@import "stylesheets/layout/**/*";
+@import "stylesheets/components/**/*";
+@import "stylesheets/pages/**/*";
+@import "stylesheets/themes/**/*";
