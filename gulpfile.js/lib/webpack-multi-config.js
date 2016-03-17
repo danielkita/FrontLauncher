@@ -46,7 +46,9 @@ module.exports = function(env) {
         { 
           test: /\.(png|jpg|gif|jpeg|svg)$/,
           loader: "url-loader?limit=100000" 
-        }
+        },
+        { test: /jquery\.js$/, loader: 'expose?$' },
+        { test: /jquery\.js$/, loader: 'expose?jQuery' }
       ]
     }
   }

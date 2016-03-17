@@ -2,13 +2,10 @@
 	FrontLaucher main js file 
 */
 
-//es6 style
 import slick from 'slick-carousel';
 import '!style!css!slick-carousel/slick/slick.css';
 import './foundation';
-//require.js style
 require('!style!css!fancybox/dist/css/jquery.fancybox.css');
-require("expose?jQuery!jquery"); // global jquery (but shouldn't be used without webpack)
 const fancybox = require('fancybox')($);
 
 
