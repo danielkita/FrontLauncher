@@ -17,7 +17,7 @@
 /// @return {Url}
 /// @require $base-url
 @function image($path, $base: $base-url) {
-  @return asset($base, 'images/', $path);
+  @return asset($base, 'img/', $path);
 }
 
 /// Returns URL to a font based on its path
@@ -28,3 +28,15 @@
 @function font($path, $base: $base-url) {
   @return asset($base, 'fonts/', $path);
 }
+
+@function em($pxval, $base: $global-font-size) {
+  @if not unitless($pxval) {
+    $pxval: strip-unit($pxval);
+  }
+  @if not unitless($base) {
+    $base: strip-unit($base);
+  }
+  @return ($pxval / $base) * 1em;
+}
+
+
