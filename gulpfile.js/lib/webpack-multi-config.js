@@ -47,6 +47,10 @@ module.exports = function(env) {
           test: /\.(png|jpg|gif|jpeg|svg)$/,
           loader: "url-loader?limit=100000" 
         },
+        {
+          test: /isotope\-|fizzy\-ui\-utils|desandro\-|masonry|outlayer|get\-size|doc\-ready|eventie|eventemitter/,
+          loader: 'imports?define=>false&this=>window'
+        },
         { test: /jquery\.js$/, loader: 'expose?$' },
         { test: /jquery\.js$/, loader: 'expose?jQuery' }
       ]
