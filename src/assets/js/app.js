@@ -54,7 +54,7 @@ const App = {
 				let markerOptions = {
 					map: map,
 				//	icon: 'assets/img/point.png',
-					position: point
+					position: center
 				};
 
 				let marker = new google.maps.Marker(markerOptions);
