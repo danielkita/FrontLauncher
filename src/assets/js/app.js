@@ -1,5 +1,7 @@
-/*
-	FrontLaucher main js file 
+/*!
+	FrontLauncher
+ 	Author: Daniel Kita <t.trax0@gmail.com>
+ 	Repo: https://github.com/T-TraX/FrontLauncher
 */
 
 import slick from 'slick-carousel';
