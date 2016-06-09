@@ -18,15 +18,27 @@ var getData = function(file) {
   var dataPath = path.resolve(config.root.src, config.tasks.html.src, config.tasks.html.dataFile)
   return JSON.parse(fs.readFileSync(dataPath, 'utf8'))
 }
+
+var stdFilter = function(str){
+    return str;
+};
+
+var filterList = ['rev','i18n'];
+
+var manageEnvironment = function(environment) {
+    filterList.forEach(function(filter){
+        environment.addFilter(filter, stdFilter);
+    });
+}
+
 var nunjucksPath = path.resolve(config.root.src, config.tasks.html.src);
 var nunjucksOptions = {
     path: nunjucksPath,
+    manageEnv: manageEnvironment,
     envOptions: {
       watch: false
     }
 }
-
-
 var htmlTask = function() {
   return gulp.src(paths.src)
     .pipe(data(getData))

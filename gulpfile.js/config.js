@@ -22,16 +22,12 @@ module.exports = {
             src: 'assets/static',
             dest: './'
         },
-        bower: {
-            src: './bower_components',
-            extensions: ['gif', 'jpg', 'png', 'woff', 'woff2', 'eot', 'svg', 'ttf']
-        },
         html: {
             src: './',
             dest: './',
             dataFile: 'data/template.json',
             extensions: ['html', 'json'],
-            excludeFolders: ['layouts', 'components', 'data']
+            excludeFolders: ['layouts', 'components', 'data','partials']
         },
         images: {
             src: 'assets/img',

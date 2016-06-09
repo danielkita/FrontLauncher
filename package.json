@@ -54,7 +54,7 @@
   "dependencies": {
     "fancybox": "^3.0.0",
     "fastclick": "^1.0.6",
-    "foundation-sites": "^6.2.0",
+    "foundation-sites": "^6.2.3",
     "jquery-match-height": "^0.7.0",
     "slick-carousel": "^1.5.9"
   }
