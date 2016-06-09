@@ -32,8 +32,8 @@ Make sure that you have latest node.js version
 
 ## Usage
 
-| Command        | Description                                                                                                                     |
-|----------------|---------------------------------------------------------------------------------------------------------------------------------|
-| watch(default) | Run build, start watch for changes assets files and run BrowserSync server                                                      |
-| build          | Build public views with assets and components                                                                                   |
-| production     | Build public views with minified assets and components to production                                                            |
+| Command          | Description                                                                                                                     |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| gulp             | Run build, start watch for changes assets files and run BrowserSync server                                                      |
+| gulp build       | Build public views with assets and components                                                                                   |
+| gulp production  | Build public views with minified assets and components to production                                                            |

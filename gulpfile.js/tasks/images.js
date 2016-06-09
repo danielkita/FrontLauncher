@@ -1,4 +1,5 @@
 var gulp         = require('gulp')
+var gulpif       = require('gulp-if')
 var config       = require('../config')
 var path         = require('path')
 var handleErrors = require('../lib/handleErrors')
@@ -13,8 +14,8 @@ var paths = {
 
 var imagesTask = function() {
   return gulp.src(paths.src)
-    .pipe(changed(paths.dest)) // Ignore unchanged files
-    .pipe(imagemin()) // Optimize
+    .pipe(changed(paths.dest))
+    .pipe(gulpif(global.production, imagemin()))
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
 }
