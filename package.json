@@ -3,6 +3,11 @@
   "version": "1.2.2",
   "description": "",
   "private": true,
+  "scripts": {
+    "postinstall": "test -f ./post-merge && cp post-merge .git/hooks/post-merge && chmod 777 .git/hooks/post-merge",
+    "start": "gulp",
+    "production": "gulp production"
+  },
   "main": "gulpfile.js",
   "devDependencies": {
     "babel-core": "^6.6.0",
@@ -48,7 +53,9 @@
     "slash": "^1.0.0",
     "style-loader": "^0.13.0",
     "url-loader": "^0.5.7",
-    "webpack": "^1.12.14"
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.10.0"
   },
   "author": "Daniel Kita <t.trax0@gmail.com>",
   "license": "MIT",
