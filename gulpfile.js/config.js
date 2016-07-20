@@ -6,6 +6,12 @@ module.exports = {
     tasks: {
         assets: ['staticAssets', 'fonts', 'iconFont', 'images', 'svg'],
         code: ['html', 'sass', 'js'],
+        browserSync:{
+        	server:{
+        		baseDir:"public",
+        		directory: true
+        	}
+        },
         sass: {
             src: 'assets/sass',
             dest: 'assets/css',
@@ -26,7 +32,7 @@ module.exports = {
             src: './',
             dest: './',
             dataFile: 'data/template.json',
-            extensions: ['html', 'json'],
+            extensions: ['html', 'json', 'twig'],
             excludeFolders: ['layouts', 'components', 'data','partials']
         },
         images: {
