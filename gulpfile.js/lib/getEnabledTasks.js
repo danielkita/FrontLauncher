@@ -5,23 +5,21 @@ var assetTasks = config.tasks.assets
 var codeTasks = config.tasks.code
 
 module.exports = function(env) {
-  var jsTasks = {
-    watch: 'webpack:watch',
-    development: 'webpack:watch',
-    production: 'webpack:production'
-  }
-
-  var matchFilter = function(task) {
+  function matchFilter(task) {
     if(config.tasks[task]) {
       if(task === 'js') {
-        task = jsTasks[env] || jsTask.watch
+        task = env === 'production' ? 'webpack:production' : false
       }
       return task
     }
   }
 
+  function exists(value) {
+    return !!value
+  }
+
   return {
-    assetTasks: assetTasks.map(matchFilter).filter(Boolean),
-    codeTasks: codeTasks.map(matchFilter).filter(Boolean)
+    assetTasks: assetTasks.map(matchFilter).filter(exists),
+    codeTasks: codeTasks.map(matchFilter).filter(exists)
   }
 }
