@@ -46,7 +46,7 @@ var htmlTask = function() {
     .pipe(render(nunjucksOptions))
     .on('error', handleErrors)
     .pipe(gulp.dest(paths.dest))
-    .pipe(browserSync.stream())
+    .on('end', browserSync.reload)
   
 }
 
