@@ -1,8 +1,10 @@
 /*!
 	FrontLauncher
+	License: MIT
  	Author: Daniel Kita <t.trax0@gmail.com>
  	Repo: https://github.com/T-TraX/FrontLauncher
 */
+
 
 import slick from 'slick-carousel';
 import '!style!css!slick-carousel/slick/slick.css';
@@ -12,11 +14,14 @@ const fancybox = require('fancybox')($);
 
 
 const App = {
-	isTouch: function () {
+	isTouch () {
         let isTouch = "ontouchstart" in window || navigator.msMaxTouchPoints;
         return isTouch;
     },
-	startFastClick: function() {
+    getGoogleMapsApiKey (){
+		return window.googleMapsApiKey || ''
+	},
+	startFastClick () {
 		if ('touchAction' in document.body.style) {
 		    document.body.style.touchAction = 'manipulation';
 		} else {
@@ -29,14 +34,15 @@ const App = {
 		    }, 'fastclick');
 		}
 	},
-	initialize: function(){
+	initialize (){
 	    $('.fancybox').fancybox();
 	    $(document).foundation();
 	},
-	initMap: function(){
+	initMap (){
 		// vanillaJS
+        const key = (this.getGoogleMapsApiKey() !== '') ? '?key="' + this.getGoogleMapsApiKey() : '';
 		const findMap = document.getElementsByClassName('gmap');
-		const scriptUrl = "http://maps.google.com/maps/api/js";
+		const scriptUrl = "http://maps.google.com/maps/api/js" + key;
 
 		const loadMap = function(){
 			for (let i = findMap.length - 1; i >= 0; i--) {
@@ -69,7 +75,7 @@ const App = {
 			document.body.appendChild( s );
 		}
 	},
-	init: function(){
+	init (){
 		document.addEventListener('DOMContentLoaded', () => {
 			this.startFastClick();  
 			this.initialize();  

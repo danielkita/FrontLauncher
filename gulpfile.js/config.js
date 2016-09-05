@@ -15,7 +15,7 @@ module.exports = {
         sass: {
             src: 'assets/sass',
             dest: 'assets/css',
-            main: 'app.scss',
+            main: '*.scss',
             extensions: ['sass', 'scss'],
             autoprefixer: {
                 browsers: ["> 0.1% in PL"]

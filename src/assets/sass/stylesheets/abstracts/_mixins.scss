@@ -32,9 +32,12 @@
   }
 }
 
-@mixin font($fontsize, $lineheight) {
-    font-size: em($fontsize);
-    line-height: em($lineheight, $fontsize);
+@mixin font($fontsize, $lineheight, $letter-spacing:0) {
+    font-size: rem-calc($fontsize);
+    line-height: ($lineheight / $fontsize);
+    @if $letter-spacing != 0 {
+        letter-spacing: ($letter-spacing / 1000) * 1em;
+    }
 }
 
 @mixin reset($type: "list") {
