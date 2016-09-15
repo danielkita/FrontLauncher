@@ -37,3 +37,8 @@ Make sure that you have latest node.js version
 | gulp             | Run build, start watch for changes assets files and run BrowserSync server                                                      |
 | gulp build       | Build public views with assets and components                                                                                   |
 | gulp production  | Build public views with minified assets and components to production                                                            |
+
+
+### Using BrowserSync as proxy
+
+Change browserSync.server to browserSync.proxy:"hostname.dev" in config.js to run browserSync in proxy mode.
