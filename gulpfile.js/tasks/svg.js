@@ -4,7 +4,6 @@ var path         = require('path')
 var browserSync  = require('browser-sync')
 var handleErrors = require('../lib/handleErrors')
 var svgstore     = require('gulp-svgstore')
-var imagemin     = require('gulp-imagemin')
 
 var paths = {
   src: path.join(config.root.src, config.tasks.svg.src, '/**'),
@@ -13,7 +12,6 @@ var paths = {
 
 var svgTask = function() {
   return gulp.src(paths.src)
-    .pipe(imagemin())
     .pipe(svgstore())
   	.on('error', handleErrors)
     .pipe(gulp.dest(paths.dest))
