@@ -5,7 +5,6 @@ var path         = require('path')
 var handleErrors = require('../lib/handleErrors')
 var browserSync  = require('browser-sync')
 var changed      = require('gulp-changed')
-var imagemin     = require('gulp-imagemin')
 
 var paths = {
   src: path.join(config.root.src, config.tasks.images.src, '/**'),
@@ -15,7 +14,6 @@ var paths = {
 var imagesTask = function() {
   return gulp.src(paths.src)
     .pipe(changed(paths.dest))
-    .pipe(gulpif(global.production, imagemin()))
     .pipe(gulp.dest(paths.dest))
     .pipe(browserSync.stream())
 }
