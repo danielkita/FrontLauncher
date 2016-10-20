@@ -7,6 +7,7 @@ var webpack         = require('webpack')
 var webpackManifest = require('./webpackManifest')
 
 module.exports = function(env) {
+console.dir(typeof Buffer);
   var jsSrc = path.resolve(config.root.src, config.tasks.js.src)
   var jsDest = path.resolve(config.root.dest, config.tasks.js.dest)
   var publicPath = slash(path.join(config.tasks.js.dest, '/'))
@@ -14,10 +15,12 @@ module.exports = function(env) {
   var extensions = config.tasks.js.extensions.map(function(extension) {
     return '.' + extension
   })
-
+  var hashStr = 'RnJvbnRMYXVuY2hlcg0KTGljZW5zZTogTUlUDQpBdXRob3I6IERhbmllbCBLaXRhIDx0LnRyYXgwQGdtYWlsLmNvbT4NClJlcG86IGh0dHBzOi8vZ2l0aHViLmNvbS9ULVRyYVgvRnJvbnRMYXVuY2hlcg==';
+  var banner = new Buffer(hashStr, 'base64');
   var webpackConfig = {
     context: jsSrc,
     plugins: [
+        new webpack.BannerPlugin(banner.toString()),
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"

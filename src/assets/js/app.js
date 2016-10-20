@@ -1,11 +1,6 @@
-/*!
-    FrontLauncher
-    License: MIT
-    Author: Daniel Kita <t.trax0@gmail.com>
-    Repo: https://github.com/T-TraX/FrontLauncher
+/*
+* PLUGINS
 */
-
-
 import slick from 'slick-carousel';
 import is from 'is_js';
 import '!style!css!slick-carousel/slick/slick.css';
@@ -13,7 +8,9 @@ import 'foundation-sites';
 require('!style!css!fancybox/dist/css/jquery.fancybox.css');
 const fancybox = require('fancybox')($);
 
-
+/*
+* APP
+*/
 const App = {
     isTouch () {
         return is.mobile() || is.tablet();
@@ -77,7 +74,8 @@ const App = {
     init (){
         document.addEventListener('DOMContentLoaded', () => {
             this.startFastClick();  
-            this.initialize();  
+            this.initialize();
+            this.initMap();
         }, false);
 
         window.onload = () => {
