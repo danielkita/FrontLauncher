@@ -1,9 +1,9 @@
-var gulp   = require('gulp')
-var del    = require('del')
-var path   = require('path')
-var config = require('../config')
+import gulp   from 'gulp'
+import del    from 'del'
+import path   from 'path'
+import config from '../config'
 
-var cleanTask = function (cb) {
+const cleanTask = cb => {
   del([config.root.dest,path.resolve(config.root.src,config.tasks.sass.src,config.tasks.iconFont.sassDest,'_icons.scss')]).then(function (paths) {
     cb()
   })

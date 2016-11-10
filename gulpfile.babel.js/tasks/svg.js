@@ -1,16 +1,16 @@
-var gulp         = require('gulp')
-var config       = require('../config')
-var path         = require('path')
-var browserSync  = require('browser-sync')
-var handleErrors = require('../lib/handleErrors')
-var svgstore     = require('gulp-svgstore')
+import gulp         from 'gulp';
+import config       from '../config';
+import path         from 'path';
+import browserSync  from 'browser-sync';
+import handleErrors from '../lib/handleErrors';
+import svgstore     from 'gulp-svgstore';
 
-var paths = {
+const paths = {
   src: path.join(config.root.src, config.tasks.svg.src, '/**'),
   dest: path.join(config.root.dest, config.tasks.svg.dest)
 }
 
-var svgTask = function() {
+const svgTask = () => {
   return gulp.src(paths.src)
     .pipe(svgstore())
   	.on('error', handleErrors)

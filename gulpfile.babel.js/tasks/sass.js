@@ -1,25 +1,25 @@
-var gulp         = require('gulp')
-var gulpif       = require('gulp-if')
-var config       = require('../config')
-var path         = require('path')
-var browserSync  = require('browser-sync')
-var handleErrors = require('../lib/handleErrors')
-var sass         = require('gulp-sass')
-var cssGlobbing  = require('gulp-css-globbing')
-var sourcemaps   = require('gulp-sourcemaps')
-var autoprefixer = require('gulp-autoprefixer')
-var cssnano      = require('gulp-cssnano')
+import gulp         from 'gulp';
+import gulpif       from 'gulp-if';
+import config       from '../config';
+import path         from 'path';
+import browserSync  from 'browser-sync';
+import handleErrors from '../lib/handleErrors';
+import sass         from 'gulp-sass';
+import cssGlobbing  from 'gulp-css-globbing';
+import sourcemaps   from 'gulp-sourcemaps';
+import autoprefixer from 'gulp-autoprefixer';
+import cssnano      from 'gulp-cssnano';
 
-var paths = {
+const paths = {
     src: path.resolve(config.root.src, config.tasks.sass.src, config.tasks.sass.main),
     dest: path.resolve(config.root.dest, config.tasks.sass.dest)
 }
-var options = {
+const options = {
     includePaths: ['node_modules/foundation-sites/scss'],
-    outputStyle: 'compressed', // nested, expanded, compact, compressed
+    outputStyle: 'expanded', // nested, expanded, compact, compressed
     sourceComments: false,
 } 
-var sassTask = function() {
+const sassTask = () => {
     gulp.src(paths.src)
         .pipe(gulpif(!global.production, sourcemaps.init()))
         .pipe(cssGlobbing(config.tasks.sass.sassGlobbing))

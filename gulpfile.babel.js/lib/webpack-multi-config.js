@@ -1,5 +1,4 @@
 var config = require('../config')
-if(!config.tasks.js) return
 
 var path            = require('path')
 var slash           = require('slash')
@@ -7,7 +6,7 @@ var webpack         = require('webpack')
 var webpackManifest = require('./webpackManifest')
 
 module.exports = function(env) {
-console.dir(typeof Buffer);
+  if(!config.tasks.js) return
   var jsSrc = path.resolve(config.root.src, config.tasks.js.src)
   var jsDest = path.resolve(config.root.dest, config.tasks.js.dest)
   var publicPath = slash(path.join(config.tasks.js.dest, '/'))
