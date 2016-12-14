@@ -1,6 +1,5 @@
 {
     "dev": true,
-    "flashes": [{"title":"dd","message":"test","type":"success"}],
     "tplAssets": "/",
     "app":{
     	"getMetaDescription":"METADESC",
