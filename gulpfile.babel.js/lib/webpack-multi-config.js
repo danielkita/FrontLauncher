@@ -4,6 +4,7 @@ var path            = require('path')
 var slash           = require('slash')
 var webpack         = require('webpack')
 var webpackManifest = require('./webpackManifest')
+var HardSourceWebpackPlugin = require('hard-source-webpack-plugin')
 
 module.exports = function(env) {
   if(!config.tasks.js) return
@@ -23,7 +24,27 @@ module.exports = function(env) {
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
-        })
+        }),
+        new HardSourceWebpackPlugin({
+            cacheDirectory: __dirname + '/../../.tmp/webpack/[confighash]',
+            recordsPath: __dirname + '/../../.tmp/webpack/[confighash]/records.json',
+            configHash: function(webpackConfig) {
+              return require('node-object-hash')().hash(webpackConfig);
+            },
+            environmentHash: {
+              root: process.cwd(),
+              directories: ['node_modules'],
+              files: ['package.json'],
+            },
+            environmentHash: function() {
+                return new Promise(function(resolve, reject) {
+                  require('fs').readFile(path.normalize(__dirname + '/../../npm-shrinkwrap.json'), function(err, src) {
+                    if (err) {return reject(err);}
+                    resolve(require('crypto').createHash('md5').update(src).digest('hex'));
+                  });
+                });
+              },
+            }),
     ],
     resolve: {
       root: jsSrc,
