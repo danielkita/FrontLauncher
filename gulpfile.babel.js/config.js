@@ -33,7 +33,7 @@ module.exports = {
             dest: './',
             dataFile: 'data/template.json',
             extensions: ['html', 'json', 'twig'],
-            excludeFolders: ['layouts', 'components', 'data','partials']
+            excludeFolders: ['layouts', 'components', 'data', 'partials', 'macros']
         },
         images: {
             src: 'assets/img',

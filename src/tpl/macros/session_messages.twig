@@ -1,0 +1,14 @@
+{% macro session(messages) %}
+    {% for msg in messages %}
+        {% set types= {
+            'good': 'success',
+            'info': 'info',
+            'bad': 'error'
+        } %}
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded',function(){
+                showMessage('{{ msg.title}}','{{msg.message}}','{{types[msg.type]}}');
+            },false);
+        </script>
+    {% endfor %}
+{% endmacro %}

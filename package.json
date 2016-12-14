@@ -61,11 +61,13 @@
   "author": "Daniel Kita <t.trax0@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "babel-polyfill": "^6.20.0",
     "fancybox": "^3.0.0",
     "fastclick": "^1.0.6",
     "foundation-sites": "^6.2.3",
     "is_js": "^0.9.0",
     "jquery-match-height": "^0.7.0",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.6.0",
+    "sweetalert2": "^6.2.1"
   }
 }

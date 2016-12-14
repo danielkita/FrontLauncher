@@ -1,10 +1,12 @@
 /*
 * PLUGINS
 */
+import "babel-polyfill";
 import slick from 'slick-carousel';
 import is from 'is_js';
 import '!style!css!slick-carousel/slick/slick.css';
 import 'foundation-sites';
+import { default as swal } from 'sweetalert2'
 require('!style!css!fancybox/dist/css/jquery.fancybox.css');
 const fancybox = require('fancybox')($);
 
@@ -71,6 +73,9 @@ const App = {
             document.body.appendChild( s );
         }
     },
+    showMessage(...args){
+        swal(...args);
+    },
     init (){
         document.addEventListener('DOMContentLoaded', () => {
             this.startFastClick();  
@@ -86,5 +91,5 @@ const App = {
         };
     }
 }
-
+window.showMessage = App.showMessage;
 App.init();
