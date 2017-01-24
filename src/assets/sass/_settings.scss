@@ -14,23 +14,24 @@ $global-weight-normal: 400;
 $global-weight-bold: 700;
 $global-lineheight: 1.5;
 $body-font-family: 'Open Sans', Arial, sans-serif;
-$header-sizes: (
-    small: (
-      'h1': 24,
-      'h2': 20,
-      'h3': 19,
-      'h4': 18,
-      'h5': 17,
-      'h6': 16,
-    ),
-    medium: (
-      'h1': 48,
-      'h2': 40,
-      'h3': 31,
-      'h4': 25,
-      'h5': 20,
-      'h6': 16,
-    ),
+$base-font-family:$body-font-family;
+$header-styles: (
+  small: (
+    'h1': ('font-size': 24),
+    'h2': ('font-size': 20),
+    'h3': ('font-size': 19),
+    'h4': ('font-size': 18),
+    'h5': ('font-size': 17),
+    'h6': ('font-size': 16),
+  ),
+  medium: (
+    'h1': ('font-size': 48),
+    'h2': ('font-size': 40),
+    'h3': ('font-size': 31),
+    'h4': ('font-size': 25),
+    'h5': ('font-size': 20),
+    'h6': ('font-size': 16),
+  ),
 );
 
 // Colors
