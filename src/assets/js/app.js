@@ -1,14 +1,14 @@
 /*
 * PLUGINS
 */
-import "babel-polyfill";
+//import "babel-polyfill"; // uncomment if you need IE11 or iOS support
 import slick from 'slick-carousel';
 import is from 'is_js';
-import '!style!css!slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick.css';
 import 'foundation-sites';
 import { default as swal } from 'sweetalert2'
-require('!style!css!fancybox/dist/css/jquery.fancybox.css');
-const fancybox = require('fancybox')($);
+require('fancybox/dist/jquery.fancybox.css');
+const fancybox = require('fancybox');
 
 /*
 * APP
@@ -38,7 +38,7 @@ const App = {
         $(document).foundation();
     },
     initMap (){
-        const key = (this.getGoogleMapsApiKey() !== '') ? '?key="' + this.getGoogleMapsApiKey() : '';
+        const key = (this.getGoogleMapsApiKey() !== '') ? '?key=' + this.getGoogleMapsApiKey() : '';
         const findMap = document.getElementsByClassName('gmap');
         const scriptUrl = "http://maps.google.com/maps/api/js" + key;
 
