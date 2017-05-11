@@ -2,8 +2,8 @@
 ## Installation:
 
 Make sure that you have latest node.js version
-<p>To install run just
-  <code>npm i</code>
+<p>To install run
+  <code>yarn</code>
 </p>
 
 

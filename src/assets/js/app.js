@@ -7,8 +7,8 @@ import is from 'is_js';
 import 'slick-carousel/slick/slick.css';
 import 'foundation-sites';
 import { default as swal } from 'sweetalert2'
-require('fancybox/dist/jquery.fancybox.css');
-const fancybox = require('fancybox');
+require('@fancyapps/fancybox/dist/jquery.fancybox.css');
+const fancybox = require('@fancyapps/fancybox');
 
 /*
 * APP
