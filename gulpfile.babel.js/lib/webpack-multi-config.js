@@ -37,7 +37,7 @@ module.exports = function(env) {
 			rules: [
 				 {
 			        test: /\.jsx?$/,
-			        exclude: /node_modules/,
+			        exclude: /node_modules\/(?!(foundation-sites)\/).*/,
 			        loader: 'babel-loader',
 			        options: { 
 			          presets: [ 
@@ -65,14 +65,6 @@ module.exports = function(env) {
 					use:[
 						{
 							loader: "url-loader?limit=100000",
-						}
-					]
-				},
-				{
-					test: /isotope\-|fizzy\-ui\-utils|desandro\-|masonry|outlayer|get\-size|doc\-ready|eventie|eventemitter/,
-					use:[
-						{
-							loader:  'imports?define=>false&this=>window',
 						}
 					]
 				},

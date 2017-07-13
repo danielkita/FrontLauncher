@@ -3,13 +3,13 @@
 */
 //import "babel-polyfill"; // uncomment if you need IE11 or iOS support
 import slick from 'slick-carousel';
-import is from 'is_js';
 import 'slick-carousel/slick/slick.css';
-import 'foundation-sites';
+import Foundation from 'foundation-sites';
 import { default as swal } from 'sweetalert2'
 require('@fancyapps/fancybox/dist/jquery.fancybox.css');
 const fancybox = require('@fancyapps/fancybox');
 
+import is from '!imports-loader?define=>undefined!is_js';
 /*
 * APP
 */
