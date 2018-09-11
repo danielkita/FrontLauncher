@@ -6,172 +6,155 @@
 /// @param {Bool} $self [false] - Whether or not to include current selector
 /// @link https://twitter.com/csswizardry/status/478938530342006784 Original tweet from Harry Roberts
 @mixin on-event($self: false) {
-    @if $self {
-        &,
-        &:hover,
-        &:active,
-        &:focus {
-            @content;
-        }
+  @if $self {
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
     }
-    @else {
-        &:hover,
-        &:active,
-        &:focus {
-            @content;
-        }
+  } @else {
+    &:hover,
+    &:active,
+    &:focus {
+      @content;
     }
+  }
 }
 
 /// Make a context based selector a little more friendly
 /// @author Hugo Giraudel
 /// @param {String} $context
 @mixin when-inside($context) {
-    #{$context} & {
-        @content;
-    }
+  #{$context} & {
+    @content;
+  }
 }
 
-@mixin font($fontsize, $lineheight, $letter-spacing:0) {
-    font-size: rem-calc($fontsize);
-    line-height: ($lineheight / $fontsize);
-    @if $letter-spacing !=0 {
-        letter-spacing: ($letter-spacing / 1000) * 1em;
-    }
+@mixin font($fontsize, $lineheight, $letter-spacing: 0) {
+  font-size: rem-calc($fontsize);
+  line-height: ($lineheight / $fontsize);
+  @if $letter-spacing !=0 {
+    letter-spacing: ($letter-spacing / 1000) * 1em;
+  }
 }
 
 @mixin reset($type: "list") {
-    @if $type=="number" {
-        appearance: textfield;
-        &::-webkit-inner-spin-button,
-        &::-webkit-outer-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
+  @if $type== "number" {
+    appearance: textfield;
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
     }
-    @else if $type=="select" {
-        appearance: none;
-        &::-ms-expand {
-            display: none;
-        }
+  } @else if $type== "select" {
+    appearance: none;
+    &::-ms-expand {
+      display: none;
     }
-    @else {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-    }
+  } @else {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 //H1 - H6 mixin
 @mixin headings($from: 1, $to: 6) {
-    @for $i from $from through $to {
-        h#{$i} {
-            @content;
-        }
+  @for $i from $from through $to {
+    h#{$i} {
+      @content;
     }
+  }
 }
 
 //browsers hacks
 @mixin firefox() {
-    @-moz-document url-prefix() {
-        @content;
-    }
+  @-moz-document url-prefix() {
+    @content;
+  }
 }
 
 @mixin chrome() {
-    @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm) {
-        @content;
-    }
+  @media all and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: 0.001dpcm) {
+    @content;
+  }
 }
 
-//iOS Safari 9+ 
+//iOS Safari 9+
 @mixin ios() {
-    @supports (-webkit-text-size-adjust: none) and (not (-ms-accelerator: true)) and (not (-moz-appearance: none)) {
-        & {
-            @content;
-        }
+  @supports (-webkit-text-size-adjust: none) and (not (-ms-accelerator: true))
+    and (not (-moz-appearance: none)) {
+    & {
+      @content;
     }
+  }
 }
 
 //safari (without iOS)
 @mixin safari() {
-    _:-webkit-full-screen:not(:root:root) & {
-        @content;
-    }
+  _:-webkit-full-screen:not(:root:root) & {
+    @content;
+  }
 }
 
 @mixin edge() {
-    @supports (-ms-accelerator: true) {
-        & {
-            @content;
-        }
+  @supports (-ms-accelerator: true) {
+    & {
+      @content;
     }
+  }
 }
 
 //ie11
 @mixin ie() {
-    _:-ms-fullscreen,
-    :root {
-        & {
-            @content;
-        }
+  _:-ms-fullscreen,
+  :root {
+    & {
+      @content;
     }
+  }
 }
 
 // compass mixins for collorzilla gradient generator
 // http://www.colorzilla.com/gradient-editor/
 @mixin filter-gradient($start-color, $end-color, $orientation: vertical) {
-    $gradient-type: if($orientation==vertical, 0, 1);
-    filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$gradient-type}, startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}');
+  $gradient-type: if($orientation==vertical, 0, 1);
+  filter: progid:DXImageTransform.Microsoft.gradient(gradientType=#{$gradient-type}, startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}');
 }
 
 @mixin background-image($background) {
-    @include background($background);
+  @include background($background);
 }
 
-@mixin font-face($style-name, $file, $family, $category:"") {
-    $filepath: "../fonts/" + $family + "/" + $file;
-    @font-face {
-        font-family: "#{$style-name}";
-        src: url($filepath + ".eot");
-        src: url($filepath + ".eot?#iefix") format('embedded-opentype'), 
-             url($filepath + ".woff2") format('woff2'), 
-             url($filepath + ".woff") format('woff'), 
-             url($filepath + ".ttf") format('truetype'), 
-             url($filepath + ".svg#" + $style-name + "") format('svg');
-        font-weight: #{$category};
-        font-style: normal;
-    }
+@mixin font-face($style-name, $file, $family, $category: "") {
+  $filepath: "../fonts/" + $family + "/" + $file;
+  @font-face {
+    font-family: "#{$style-name}";
+    src: url($filepath+".eot");
+    src: url($filepath+".eot?#iefix") format("embedded-opentype"),
+      url($filepath+".woff2") format("woff2"),
+      url($filepath+".woff") format("woff"),
+      url($filepath+".ttf") format("truetype"),
+      url($filepath+".svg#"+$style-name+"") format("svg");
+    font-weight: #{$category};
+    font-style: normal;
+  }
 }
 
 @import "colors";
-$socialColors: 
-    twitter $twitter,
-    facebook $facebook,
-    googleplus $googleplus,
-    pinterest $pinterest,
-    linkedin $linkedin,
-    youtube $youtube,
-    vimeo $vimeo,
-    tumblr $tumblr,
-    instagram $instagram,
-    flickr $flickr,
-    dribbble $dribbble,
-    quora $quora,
-    foursquare $foursquare,
-    forrst $forrst,
-    vk $vk,
-    wordpress $wordpress,
-    stumbleupon $stumbleupon,
-    yahoo $yahoo,
-    blogger $blogger,
-    soundcloud $soundcloud;
+$socialColors: twitter $twitter, facebook $facebook, googleplus $googleplus,
+  pinterest $pinterest, linkedin $linkedin, youtube $youtube, vimeo $vimeo,
+  tumblr $tumblr, instagram $instagram, flickr $flickr, dribbble $dribbble,
+  quora $quora, foursquare $foursquare, forrst $forrst, vk $vk,
+  wordpress $wordpress, stumbleupon $stumbleupon, yahoo $yahoo, blogger $blogger,
+  soundcloud $soundcloud;
 
 @mixin socialColors($event: false) {
-    $pseudo: if($event, ':' + $event, '');
-    @each $color in $socialColors {
-        .#{nth($color, 1)}#{$pseudo} {
-            color: nth($color, 2);
-        }
+  $pseudo: if($event, ":" + $event, "");
+  @each $color in $socialColors {
+    .#{nth($color, 1)}#{$pseudo} {
+      color: nth($color, 2);
     }
+  }
 }

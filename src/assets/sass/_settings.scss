@@ -13,52 +13,73 @@ $global-font-size: 16px;
 $global-weight-normal: 400;
 $global-weight-bold: 700;
 $global-lineheight: 1.5;
-$body-font-family: 'Open Sans', Arial, sans-serif;
-$base-font-family:$body-font-family;
+$body-font-family: "Open Sans", Arial, sans-serif;
+$base-font-family: $body-font-family;
 $header-styles: (
   small: (
-    'h1': ('font-size': 24),
-    'h2': ('font-size': 20),
-    'h3': ('font-size': 19),
-    'h4': ('font-size': 18),
-    'h5': ('font-size': 17),
-    'h6': ('font-size': 16),
+    "h1": (
+      "font-size": 24
+    ),
+    "h2": (
+      "font-size": 20
+    ),
+    "h3": (
+      "font-size": 19
+    ),
+    "h4": (
+      "font-size": 18
+    ),
+    "h5": (
+      "font-size": 17
+    ),
+    "h6": (
+      "font-size": 16
+    )
   ),
   medium: (
-    'h1': ('font-size': 48),
-    'h2': ('font-size': 40),
-    'h3': ('font-size': 31),
-    'h4': ('font-size': 25),
-    'h5': ('font-size': 20),
-    'h6': ('font-size': 16),
-  ),
+    "h1": (
+      "font-size": 48
+    ),
+    "h2": (
+      "font-size": 40
+    ),
+    "h3": (
+      "font-size": 31
+    ),
+    "h4": (
+      "font-size": 25
+    ),
+    "h5": (
+      "font-size": 20
+    ),
+    "h6": (
+      "font-size": 16
+    )
+  )
 );
 
 // Colors
 $foundation-palette: (
-    primary: #2199e8,
-    secondary: #777,
-    success: #3adb76,
-    info:#81d4fa,
-    warning: #ffae00,
-    alert: #ec5840,
+  primary: #2199e8,
+  secondary: #777,
+  success: #3adb76,
+  info: #81d4fa,
+  warning: #ffae00,
+  alert: #ec5840
 );
-$white:#fff;
-
+$white: #fff;
 
 // Breakpoints
 $breakpoint-classes: (small phone medium tablet large xlarge);
 
 $breakpoints: (
-    small: 0,
-    phone: 450px,
-    medium: 640px,
-    tablet: 768px,
-    large: 1024px,
-    xlarge: 1200px,
-    xxlarge: 1440px,
-  );
-
-
+  small: 0,
+  phone: 450px,
+  medium: 640px,
+  tablet: 768px,
+  large: 1024px,
+  xlarge: 1200px,
+  xxlarge: 1440px
+);
 
 $input-box-shadow: 0;

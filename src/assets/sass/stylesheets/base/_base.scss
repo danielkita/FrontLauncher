@@ -1,21 +1,21 @@
-body{
-	touch-action: manipulation;
+body {
+  touch-action: manipulation;
 }
 .wrapper {
-	width: $wrapperPercentWidth;
-	margin: 0px auto;
+  width: $wrapperPercentWidth;
+  margin: 0px auto;
 }
-.wrapper.first{
-	max-width: (($global-width * 100) / strip-unit($wrapperPercentWidth));
-	width: 100%;
+.wrapper.first {
+  max-width: (($global-width * 100) / strip-unit($wrapperPercentWidth));
+  width: 100%;
 }
-a { 
-	color: inherit;
-	text-decoration: inherit;
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
-.slick-slide img{
-	display: inline-block;
+.slick-slide img {
+  display: inline-block;
 }
-input{
-	box-shadow: none;
+input {
+  box-shadow: none;
 }

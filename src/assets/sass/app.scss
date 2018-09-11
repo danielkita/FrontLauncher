@@ -4,7 +4,6 @@
 @charset "UTF-8";
 @import "settings";
 
-
 /*!
 	FrontLauncher
 	License: MIT
@@ -12,15 +11,12 @@
  	Repo: https://github.com/T-TraX/FrontLauncher
 */
 
-
-
 //----------------------------------*\
 // VENDOR
 //----------------------------------*/
 
-@import "foundation",
-		"node_modules/sweetalert2/src/sweetalert2",
-		"foundationPartials";
+@import "foundation", "node_modules/sweetalert2/src/sweetalert2",
+  "foundationPartials";
 
 //----------------------------------*\
 // COMPONENTS
