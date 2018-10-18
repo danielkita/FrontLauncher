@@ -7,8 +7,8 @@ import Foundation from "foundation-sites";
 import { default as swal } from "sweetalert2";
 require("@fancyapps/fancybox/dist/jquery.fancybox.css");
 const fancybox = require("@fancyapps/fancybox");
-
 import is from "is_js";
+
 /*
 * APP
 */
@@ -26,7 +26,7 @@ const App = {
   initMap() {
     const key =
       this.getGoogleMapsApiKey() !== ""
-        ? "?key=" + this.getGoogleMapsApiKey()
+        ? `?key=${this.getGoogleMapsApiKey()}`
         : "";
     const findMap = document.getElementsByClassName("gmap");
     const scriptUrl = "http://maps.google.com/maps/api/js" + key;
@@ -66,7 +66,7 @@ const App = {
     }
   },
   showMessage(...args) {
-    swal(...args);
+    return swal(...args);
   },
   init() {
     document.addEventListener(
