@@ -24,13 +24,13 @@ const options = {
   sourceComments: false
 };
 const sassTask = () => {
-  gulp
+  return gulp
     .src(paths.src)
     .pipe(gulpif(!global.production, sourcemaps.init()))
     .pipe(cssGlobbing(config.tasks.sass.sassGlobbing))
     .pipe(sass(options))
     .on("error", handleErrors)
-    .pipe(autoprefixer(config.tasks.sass.autoprefixer))
+    .pipe(autoprefixer())
     .pipe(gulpif(global.production, cssnano({ autoprefixer: false })))
     .pipe(gulpif(!global.production, sourcemaps.write("./")))
     .pipe(gulp.dest(paths.dest))

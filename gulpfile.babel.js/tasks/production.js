@@ -1,6 +1,5 @@
-import config from "../config";
 import gulp from "gulp";
-import gulpSequence from "gulp-sequence";
+import gulpSequence from "gulp4-run-sequence";
 import getEnabledTasks from "../lib/getEnabledTasks";
 
 const productionTask = cb => {
