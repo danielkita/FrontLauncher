@@ -39,15 +39,15 @@
   }
 }
 
-@mixin reset($type: "list") {
-  @if $type== "number" {
+@mixin reset($type: 'list') {
+  @if $type== 'number' {
     appearance: textfield;
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
-  } @else if $type== "select" {
+  } @else if $type== 'select' {
     appearance: none;
     &::-ms-expand {
       display: none;
@@ -83,8 +83,7 @@
 
 //iOS Safari 9+
 @mixin ios() {
-  @supports (-webkit-text-size-adjust: none) and (not (-ms-accelerator: true))
-    and (not (-moz-appearance: none)) {
+  @supports (-webkit-text-size-adjust: none) and (not (-ms-accelerator: true)) and (not (-moz-appearance: none)) {
     & {
       @content;
     }
@@ -127,31 +126,27 @@
   @include background($background);
 }
 
-@mixin font-face($style-name, $file, $family, $category: "") {
-  $filepath: "../fonts/" + $family + "/" + $file;
+@mixin font-face($style-name, $file, $family, $category: '') {
+  $filepath: '../fonts/' + $family + '/' + $file;
   @font-face {
-    font-family: "#{$style-name}";
-    src: url($filepath+".eot");
-    src: url($filepath+".eot?#iefix") format("embedded-opentype"),
-      url($filepath+".woff2") format("woff2"),
-      url($filepath+".woff") format("woff"),
-      url($filepath+".ttf") format("truetype"),
-      url($filepath+".svg#"+$style-name+"") format("svg");
+    font-family: '#{$style-name}';
+    src: url($filepath+'.eot');
+    src: url($filepath+'.eot?#iefix') format('embedded-opentype'), url($filepath+'.woff2') format('woff2'),
+      url($filepath+'.woff') format('woff'), url($filepath+'.ttf') format('truetype'),
+      url($filepath+'.svg#'+$style-name+'') format('svg');
     font-weight: #{$category};
     font-style: normal;
   }
 }
 
-@import "colors";
-$socialColors: twitter $twitter, facebook $facebook, googleplus $googleplus,
-  pinterest $pinterest, linkedin $linkedin, youtube $youtube, vimeo $vimeo,
-  tumblr $tumblr, instagram $instagram, flickr $flickr, dribbble $dribbble,
-  quora $quora, foursquare $foursquare, forrst $forrst, vk $vk,
-  wordpress $wordpress, stumbleupon $stumbleupon, yahoo $yahoo, blogger $blogger,
-  soundcloud $soundcloud;
+@import 'colors';
+$socialColors: twitter $twitter, facebook $facebook, googleplus $googleplus, pinterest $pinterest, linkedin $linkedin,
+  youtube $youtube, vimeo $vimeo, tumblr $tumblr, instagram $instagram, flickr $flickr, dribbble $dribbble, quora $quora,
+  foursquare $foursquare, forrst $forrst, vk $vk, wordpress $wordpress, stumbleupon $stumbleupon, yahoo $yahoo,
+  blogger $blogger, soundcloud $soundcloud;
 
 @mixin socialColors($event: false) {
-  $pseudo: if($event, ":" + $event, "");
+  $pseudo: if($event, ':' + $event, '');
   @each $color in $socialColors {
     .#{nth($color, 1)}#{$pseudo} {
       color: nth($color, 2);
