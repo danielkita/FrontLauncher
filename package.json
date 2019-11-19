@@ -4,14 +4,25 @@
   "description": "",
   "private": true,
   "scripts": {
-    "postinstall": "test -f ./post-merge && cp post-merge .git/hooks/post-merge && chmod 777 .git/hooks/post-merge",
     "start": "gulp",
-    "production": "gulp production"
+    "production": "gulp production",
+    "prettier": "prettier \"./src/**/*.{js,jsx,ts,tsx,scss}\" --write"
   },
   "browserslist": [
     "> 0.1% in PL"
   ],
   "main": "gulpfile.js",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,scss}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
@@ -63,8 +74,11 @@
     "gulp-util": "^3.0.7",
     "gulp-watch": "^5.0.1",
     "gulp4-run-sequence": "^1.0.0",
+    "husky": "^3.1.0",
     "imports-loader": "^0.8.0",
+    "lint-staged": "^9.4.3",
     "node-object-hash": "^2.0.0",
+    "prettier": "^1.19.1",
     "pretty-hrtime": "^1.0.2",
     "require-dir": "^1.1.0",
     "sass-loader": "^8.0.0",
@@ -87,6 +101,7 @@
     "jquery": "^3.3.1",
     "jquery-match-height": "^0.7.0",
     "slick-carousel": "^1.6.0",
-    "sweetalert2": "^9.3.16"
+    "sweetalert2": "^9.3.16",
+    "what-input": "^5.2.6"
   }
 }
