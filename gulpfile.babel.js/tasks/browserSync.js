@@ -1,21 +1,20 @@
-import browserSync        from 'browser-sync';
-import gulp               from 'gulp';
-import slash              from 'slash';
-import path               from 'path';
+import browserSync from 'browser-sync';
+import gulp from 'gulp';
+import slash from 'slash';
+import path from 'path';
 import webpackMultiConfig from '../lib/webpack-multi-config';
-import config             from '../config';
-import webpack            from 'webpack';
+import config from '../config';
+import webpack from 'webpack';
 
-const browserSyncTask = () => {
-
-  const webpackConfig = webpackMultiConfig('development')
-  const compiler = webpack(webpackConfig)
+const browserSyncTask = done => {
+  const webpackConfig = webpackMultiConfig('development');
+  const compiler = webpack(webpackConfig);
   const proxyConfig = config.tasks.browserSync.proxy || null;
 
-  if (typeof(proxyConfig) === 'string') {
+  if (typeof proxyConfig === 'string') {
     config.tasks.browserSync.proxy = {
-      target : proxyConfig
-    }
+      target: proxyConfig,
+    };
   }
 
   const server = config.tasks.browserSync.proxy || config.tasks.browserSync.server;
@@ -23,13 +22,14 @@ const browserSyncTask = () => {
   server.middleware = [
     require('webpack-dev-middleware')(compiler, {
       stats: 'errors-only',
-      publicPath: slash(path.join('/', webpackConfig.output.publicPath))
+      publicPath: slash(path.join('/', webpackConfig.output.publicPath)),
     }),
-    require('webpack-hot-middleware')(compiler)
-  ]
+    require('webpack-hot-middleware')(compiler),
+  ];
 
-  browserSync.init(config.tasks.browserSync)
-}
+  browserSync.init(config.tasks.browserSync);
+  done();
+};
 
-gulp.task('browserSync', browserSyncTask)
-module.exports = browserSyncTask
+gulp.task('browserSync', browserSyncTask);
+module.exports = browserSyncTask;

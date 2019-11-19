@@ -1,9 +1,9 @@
 {
-    "dev": true,
-    "tplAssets": "/",
-    "app":{
-    	"getMetaDescription":"METADESC",
-    	"getMetaKeywords": "KEYWORDS",
-    	"getMetaTitle": "FrontLauncher"	
-    }
+  "dev": true,
+  "tplAssets": "/",
+  "app": {
+    "getMetaDescription": "METADESC",
+    "getMetaKeywords": "KEYWORDS",
+    "getMetaTitle": "FrontLauncher"
+  }
 }

@@ -1,8 +1,8 @@
-var gulp         = require('gulp')
-var gulpSequence = require('gulp-sequence')
+import gulp from 'gulp';
+import gulpSequence from 'gulp4-run-sequence';
 
 // If you are familiar with Rails, this task the equivalent of `rake assets:precompile`
-var revTask = function(cb) {
+const revTask = function(cb) {
   gulpSequence(
     // 1) Add md5 hashes to assets referenced by CSS and JS files
     //'rev-assets',
@@ -14,8 +14,9 @@ var revTask = function(cb) {
     'update-html',
     // 5) Report filesizes
     'size-report',
-  cb)
-}
+    cb
+  );
+};
 
-gulp.task('rev', revTask)
-module.exports = revTask
+gulp.task('rev', revTask);
+module.exports = revTask;

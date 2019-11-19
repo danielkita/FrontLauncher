@@ -1,5 +1,5 @@
-import gulp            from 'gulp';
-import gulpSequence    from 'gulp-sequence';
+import gulp from 'gulp';
+import gulpSequence from 'gulp4-run-sequence';
 import getEnabledTasks from '../lib/getEnabledTasks';
 const tasks = getEnabledTasks('watch');
 
