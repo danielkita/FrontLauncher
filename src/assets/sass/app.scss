@@ -2,7 +2,7 @@
 // SETTINGS
 //----------------------------------*/
 @charset "UTF-8";
-@import "settings";
+@import 'settings';
 
 /*!
 	FrontLauncher
@@ -15,16 +15,15 @@
 // VENDOR
 //----------------------------------*/
 
-@import "foundation", "node_modules/sweetalert2/src/sweetalert2",
-  "foundationPartials";
+@import 'foundation', 'node_modules/sweetalert2/src/sweetalert2', 'foundationPartials';
 
 //----------------------------------*\
 // COMPONENTS
 //----------------------------------*/
 
-@import "stylesheets/abstracts/**/*";
-@import "stylesheets/base/**/*";
-@import "stylesheets/layout/**/*";
-@import "stylesheets/components/**/*";
-@import "stylesheets/pages/**/*";
-@import "stylesheets/themes/**/*";
+@import 'stylesheets/abstracts/**/*';
+@import 'stylesheets/base/**/*';
+@import 'stylesheets/layout/**/*';
+@import 'stylesheets/components/**/*';
+@import 'stylesheets/pages/**/*';
+@import 'stylesheets/themes/**/*';
